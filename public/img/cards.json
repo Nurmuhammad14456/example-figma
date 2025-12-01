@@ -1,0 +1,252 @@
+{
+  "data": [
+    {
+      "id": 101,
+      "title": "Minimal qora Hoodie",
+      "imageUrl": "https://via.placeholder.com/600x400?text=Hoodie+Black",
+      "imageAlt": "Minimal qora hoodie old ko‘rinish",
+      "description": "Yengil, yumshoq paxta hoodie — kundalik uchun ideal.",
+      "rating": 4.6,
+      "ratingCount": 234,
+      "price": 29.99,
+      "currency": "USD",
+      "priceDisplay": "🛒 29.99 USD",
+      "inStock": true,
+      "tags": [
+        "clothing",
+        "hoodie",
+        "bestseller"
+      ],
+      "badge": "Bestseller",
+      "variant": {
+        "color": "black",
+        "size": [
+          "S",
+          "M",
+          "L"
+        ]
+      }
+    },
+    {
+      "id": 102,
+      "title": "Klassik oq futbolka",
+      "imageUrl": "https://via.placeholder.com/600x400?text=Tshirt+White",
+      "imageAlt": "Oq futbolka tasviri",
+      "description": "100% paxta, nafas oladigan material, kundalik foydalanish uchun.",
+      "rating": 4.2,
+      "ratingCount": 98,
+      "price": 12.5,
+      "currency": "USD",
+      "priceDisplay": "🛒 12.50 USD",
+      "inStock": true,
+      "tags": [
+        "clothing",
+        "tshirt"
+      ],
+      "badge": null,
+      "variant": {
+        "color": "white",
+        "size": [
+          "M",
+          "L",
+          "XL"
+        ]
+      }
+    },
+    {
+      "id": 103,
+      "title": "Ergonomik ofis stuli",
+      "imageUrl": "https://via.placeholder.com/600x400?text=Office+Chair",
+      "imageAlt": "Ofis stuli ergonomik",
+      "description": "Uzoq vaqt o‘tirish uchun bel va bo‘yinni qo‘llab-quvvatlovchi stul.",
+      "rating": 4.9,
+      "ratingCount": 412,
+      "price": 149.99,
+      "currency": "USD",
+      "priceDisplay": "🛒 149.99 USD",
+      "inStock": false,
+      "tags": [
+        "furniture",
+        "office"
+      ],
+      "badge": "Limited",
+      "variant": {
+        "color": "grey"
+      }
+    },
+    {
+      "id": 104,
+      "title": "Bluetooth naushnik",
+      "imageUrl": "https://via.placeholder.com/600x400?text=Earbuds",
+      "imageAlt": "Simsiz naushnik",
+      "description": "Shovqinni pasaytirish, 24 soat batareya ishlashi.",
+      "rating": 4.4,
+      "ratingCount": 176,
+      "price": 59.0,
+      "currency": "USD",
+      "priceDisplay": "🛒 59.00 USD",
+      "inStock": true,
+      "tags": [
+        "electronics",
+        "audio"
+      ],
+      "badge": "Sale",
+      "variant": {
+        "color": "black"
+      }
+    },
+    {
+      "id": 105,
+      "title": "Stakanning termosi 500ml",
+      "imageUrl": "https://via.placeholder.com/600x400?text=Thermos",
+      "imageAlt": "500ml termoss",
+      "description": "Issiq/ sovuq uchun 12 soat izolatsiya, bardoshli.",
+      "rating": 4.1,
+      "ratingCount": 54,
+      "price": 22.0,
+      "currency": "USD",
+      "priceDisplay": "🛒 22.00 USD",
+      "inStock": true,
+      "tags": [
+        "kitchen",
+        "travel"
+      ],
+      "badge": null,
+      "variant": {
+        "color": "silver"
+      }
+    },
+    {
+      "id": 106,
+      "title": "Canvas sumka — chelakcha",
+      "imageUrl": "https://via.placeholder.com/600x400?text=Canvas+Bag",
+      "imageAlt": "Katta canvas sumka",
+      "description": "Eko-materialdan yasalgan, kundalik xaridlar uchun qulay.",
+      "rating": 3.9,
+      "ratingCount": 21,
+      "price": 15.75,
+      "currency": "USD",
+      "priceDisplay": "🛒 15.75 USD",
+      "inStock": true,
+      "tags": [
+        "bag",
+        "eco"
+      ],
+      "badge": "New",
+      "variant": {
+        "color": "beige"
+      }
+    },
+    {
+      "id": 107,
+      "title": "Portable powerbank 10000mAh",
+      "imageUrl": "https://via.placeholder.com/600x400?text=Powerbank",
+      "imageAlt": "Portable powerbank",
+      "description": "Tez zaryad va ikki port bilan, safar uchun ideal.",
+      "rating": 4.3,
+      "ratingCount": 310,
+      "price": 25.0,
+      "currency": "USD",
+      "priceDisplay": "🛒 25.00 USD",
+      "inStock": true,
+      "tags": [
+        "electronics",
+        "power"
+      ],
+      "badge": null,
+      "variant": {
+        "color": "black"
+      }
+    },
+    {
+      "id": 108,
+      "title": "Kichik stol — oak",
+      "imageUrl": "https://via.placeholder.com/600x400?text=Side+Table",
+      "imageAlt": "Kichik stol oak",
+      "description": "Yengil, zamonaviy dizayn — yashash xonasi uchun mos.",
+      "rating": 4.0,
+      "ratingCount": 66,
+      "price": 79.99,
+      "currency": "USD",
+      "priceDisplay": "🛒 79.99 USD",
+      "inStock": true,
+      "tags": [
+        "furniture",
+        "home"
+      ],
+      "badge": null,
+      "variant": {
+        "color": "oak"
+      }
+    },
+    {
+      "id": 109,
+      "title": "Suv pichoqlari to'plami",
+      "imageUrl": "https://via.placeholder.com/600x400?text=Knife+Set",
+      "imageAlt": "Pichoq to'plami",
+      "description": "Barchasi zangga chidamli, oshxona uchun ideal.",
+      "rating": 4.5,
+      "ratingCount": 89,
+      "price": 39.5,
+      "currency": "USD",
+      "priceDisplay": "🛒 39.50 USD",
+      "inStock": true,
+      "tags": [
+        "kitchen",
+        "cutlery"
+      ],
+      "badge": "Bestseller",
+      "variant": {
+        "pieces": 6
+      }
+    },
+    {
+      "id": 110,
+      "title": "Yoga mat 6mm",
+      "imageUrl": "https://via.placeholder.com/600x400?text=Yoga+Mat",
+      "imageAlt": "6mm yoga mat",
+      "description": "Qattiq emas, sirpanchiq yuzasi, mashqlar uchun qulay.",
+      "rating": 4.0,
+      "ratingCount": 47,
+      "price": 18.0,
+      "currency": "USD",
+      "priceDisplay": "🛒 18.00 USD",
+      "inStock": true,
+      "tags": [
+        "fitness",
+        "yoga"
+      ],
+      "badge": null,
+      "variant": {
+        "thickness": "6mm",
+        "color": "purple"
+      }
+    },
+    {
+      "id": 111,
+      "title": "LED stol chirog'i",
+      "imageUrl": "https://via.placeholder.com/600x400?text=LED+Lamp",
+      "imageAlt": "LED stol chirog'i",
+      "description": "Yumshoq yorug'lik, ko'zlar uchun xavfsiz.",
+      "rating": 4.2,
+      "ratingCount": 128,
+      "price": 34.99,
+      "currency": "USD",
+      "priceDisplay": "🛒 34.99 USD",
+      "inStock": true,
+      "tags": [
+        "home",
+        "lighting"
+      ],
+      "badge": "Sale",
+      "variant": {
+        "color": "white"
+      }
+    }
+  ],
+  "meta": {
+    "total": 11,
+    "page": 1,
+    "perPage": 20
+  }
+}
