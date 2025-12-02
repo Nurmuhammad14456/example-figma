@@ -1,4 +1,4 @@
-export const comments = [
+export const commentsData = [
   {
     id: "1",
     rating: 5,
@@ -11,24 +11,24 @@ export const comments = [
     rating: 4,
     name: "Alex K.",
     review:
-      "Finding clothes that align with my personal style used to be a challenge until I discovered Shop.co. The range of options they offer is truly remarkable, catering to a variety of tastes and occasions,",
+      "Finding clothes that align with my personal style used to be a challenge until I discovered Shop.co. The range of options they offer is truly remarkable, catering to a variety of tastes and occasions.",
   },
   {
     id: "3",
     rating: 2,
     name: "James L.",
     review:
-      "As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends.",
+      "As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon Shop.co. The selection of clothes is diverse and aligned with the latest trends.",
   },
   {
     id: "4",
     rating: 5,
     name: "Makabor S.",
     review:
-      "As  who's always on the lookout for unique  pieces, I'm thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends.",
+      "As someone who's always searching for unique fashion pieces, I'm glad I found Shop.co. Their collection is stylish, trendy, and stands out from the rest.",
   },
 
-  // All revers
+  // More Reviews
 
   {
     id: "5",
@@ -43,7 +43,7 @@ export const comments = [
     rating: 4,
     name: "Alex K.",
     review:
-      "The t-shirt exceeded my expectations! The colors are vibrant and the print quality is top-notch. Being a UI/UX designer myself, I'm quite picky about aesthetics, and this t-shirt definitely gets a thumbs up from me.",
+      "The t-shirt exceeded my expectations! The colors are vibrant and the print quality is top-notch. As a UI/UX designer, I'm quite picky about aesthetics, and this t-shirt definitely gets my approval.",
     day: "Posted on August 15, 2023",
   },
   {
@@ -51,7 +51,7 @@ export const comments = [
     rating: 2,
     name: "Ethan R.",
     review:
-      "This t-shirt is a must-have for anyone who appreciates good design. The minimalistic yet stylish pattern caught my eye, and the fit is perfect. I can see the designer's touch in every aspect of this shirt.",
+      "This t-shirt is a must-have for anyone who appreciates good design. The minimalistic yet stylish pattern caught my eye, and the fit is perfect.",
     day: "Posted on August 16, 2023",
   },
   {
@@ -59,7 +59,7 @@ export const comments = [
     rating: 5,
     name: "Olivia P.",
     review:
-      "As a UI/UX enthusiast, I value simplicity and functionality. This t-shirt not only represents those principles but also feels great to wear. It's evident that the designer poured their creativity into making this t-shirt stand out.",
+      "As a UI/UX enthusiast, I value simplicity and functionality. This t-shirt not only represents those principles but also feels great to wear. It's evident that the designer poured their creativity into it.",
     day: "Posted on August 17, 2023",
   },
   {
@@ -67,7 +67,7 @@ export const comments = [
     rating: 2,
     name: "Liam K.",
     review:
-      "This t-shirt is a fusion of comfort and creativity. The fabric is soft, and the design speaks volumes about the designer's skill. It's like wearing a piece of art that reflects my passion for both design and fashion.",
+      "This t-shirt blends comfort and creativity. The fabric is soft, and the design truly reflects the designer's skill. It feels like wearing a piece of art.",
     day: "Posted on August 18, 2023",
   },
   {
@@ -75,7 +75,7 @@ export const comments = [
     rating: 5,
     name: "Ava H.",
     review:
-      "I'm not just wearing a t-shirt; I'm wearing a piece of design philosophy. The intricate details and thoughtful layout of the design make this shirt a conversation starter.",
+      "I'm not just wearing a t-shirt; I'm wearing a piece of design philosophy. The thoughtful layout and clean details make this shirt a real conversation starter.",
     day: "Posted on August 19, 2023",
   },
 ];

@@ -10,7 +10,8 @@ import ConditionalFooter from "./ConditionalFooter";
 import Braws from "./brows";
 import Home from "./Card"; 
 import Homee from "./Card/Topindex";
-import Commentary from "./Comments";
+import CommentsSection from "./Comments";
+import ProductPage from "./product";
 
 
 
@@ -45,7 +46,7 @@ export default function RootLayout({
             <Home />
             <Homee />
             <Braws />
-            <Commentary />
+            <CommentsSection />
           </ConditionalContent>
 
           <CartOnlyContent />

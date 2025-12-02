@@ -1,8 +1,8 @@
 const Braws = () => {
   return (
     <div className="w-full bg-[#F0F0F0] mt-[50px] py-[60px]">
-      <h1 className="text-center text-black text-3xl font-bold mb-8">
-        BROWSE BY dress STYLE
+      <h1 className="text-center text-black text-4xl font-bold p-5">
+     <b>BROWSE BY DRESS STYLE</b>
       </h1>
       
       <div className="mx-auto flex flex-wrap gap-4  justify-center">
