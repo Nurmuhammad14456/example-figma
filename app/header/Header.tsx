@@ -7,7 +7,10 @@ import { useCart } from "../context/CartContext";
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [bannerOpen, setBannerOpen] = useState(true);
-  const { showCartOnly, setShowCartOnly, setShowCheckoutOnly } = useCart();
+  const { showCartOnly, setShowCartOnly, setShowCheckoutOnly, cartItems } = useCart();
+  
+  // Savatdagi jami mahsulotlar sonini hisoblash
+  const cartItemsCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   const scrollToCart = () => {
     setShowCartOnly(true);
@@ -18,6 +21,8 @@ export default function Header() {
       }
     }, 100);
   };
+
+  
 
   return (
     <header className="w-full sticky top-0 z-50">
@@ -89,9 +94,14 @@ export default function Header() {
             </div>
             <button
               onClick={scrollToCart}
-              className="cursor-pointer hover:opacity-70 transition-opacity"
+              className="relative cursor-pointer hover:opacity-70 transition-opacity"
             >
               <ShoppingCart size={22} />
+              {cartItemsCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                  {cartItemsCount > 99 ? '99+' : cartItemsCount}
+                </span>
+              )}
             </button>
            <button>
              <User size={22} />

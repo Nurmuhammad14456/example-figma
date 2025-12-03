@@ -1,8 +1,11 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { commentsData } from "../data/commits";
 import { BiDotsVerticalRounded, BiSliderAlt } from "react-icons/bi";
+import { product } from "../data/pruduct";
+import { useCart } from "../context/CartContext";
 
 type Comment = {
   id: string;
@@ -13,6 +16,10 @@ type Comment = {
 };
 
 export default function ProductPage() {
+  const { addToCart } = useCart();
+  const searchParams = useSearchParams();
+  const id = searchParams.get("id");
+  const productItem = product.find((p) => p.id === id) || product[0];
   const [selectedColor, setSelectedColor] = useState("olive");
   const [selectedSize, setSelectedSize] = useState("Large");
   const [quantity, setQuantity] = useState(1);
@@ -39,31 +46,31 @@ export default function ProductPage() {
       <div className="flex flex-col lg:flex-row gap-10">
         {/* Left - Small Images */}
         <div className="flex flex-col gap-2">
-          <Image src="/images/tshirt-front.jpg" alt="Front view" width={150} height={167} className="rounded-lg border border-gray-200 cursor-pointer" />
-          <Image src="/images/tshirt-back.jpg" alt="Back view" width={150} height={167} className="rounded-lg border border-gray-200 cursor-pointer" />
-          <Image src="/img/Frame 62.png" alt="Model view" width={150} height={167} className="rounded-lg border border-gray-200 cursor-pointer" />
+          <Image src={productItem.image} alt={productItem.name} width={150} height={167} className="rounded-lg border border-gray-200 cursor-pointer" />
+          <Image src={productItem.image} alt={productItem.name} width={150} height={167} className="rounded-lg border border-gray-200 cursor-pointer" />
+          <Image src={productItem.image} alt={productItem.name} width={150} height={167} className="rounded-lg border border-gray-200 cursor-pointer" />
         </div>
 
         {/* Main Image */}
         <div className="flex flex-col gap-3">
-          <Image src="/img/3.svg" alt="T-shirt main" width={440} height={530} className="rounded-lg border border-gray-200" />
+          <Image src={productItem.image} alt={productItem.name} width={440} height={530} className="rounded-lg border border-gray-200" />
         </div>
 
         {/* Product Details */}
         <div className="flex-1 flex flex-col gap-4">
-          <h1 className="text-3xl font-bold text-black">ONE LIFE GRAPHIC T-SHIRT</h1>
+          <h1 className="text-3xl font-bold text-black">{productItem.name}</h1>
           <div className="flex items-center gap-2 text-black">
-            <div className="flex text-yellow-400">★★★★☆</div>
-            <span>4.5/5</span>
+            <div className="flex text-yellow-400">{Array.from({ length: 5 }).map((_, i) => (<span key={i}>{i < Math.floor(productItem.rating || 0) ? '★' : '☆'}</span>))}</div>
+            <span>{productItem.rating || "4"}/5</span>
           </div>
           <div className="flex items-center gap-3 text-2xl text-black">
-            <span className="font-bold">$260</span>
-            <span className="line-through text-gray-400">$300</span>
-            <span className="bg-pink-100 text-pink-500 px-2 py-1 rounded-md text-sm">-40%</span>
+            <span className="font-bold">${productItem.price}</span>
+            {productItem.oldPrice && <span className="line-through text-gray-400">${productItem.oldPrice}</span>}
+            {productItem.oldPrice && (
+              <span className="bg-pink-100 text-pink-500 px-2 py-1 rounded-md text-sm">-{Math.round(((productItem.oldPrice - productItem.price) / productItem.oldPrice) * 100)}%</span>
+            )}
           </div>
-          <p className="text-black">
-            This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.
-          </p>
+          <p className="text-black">This product is loaded from data and shows its image, price and rating.</p>
 
           {/* Colors */}
           <div>
@@ -102,7 +109,7 @@ export default function ProductPage() {
               <span className="px-4">{quantity}</span>
               <button className="px-3 py-1" onClick={() => setQuantity(quantity + 1)}>+</button>
             </div>
-            <button className="bg-black text-white px-6 py-2 rounded-full">Add to Cart</button>
+            <button className="bg-black text-white px-6 py-2 rounded-full" onClick={() => addToCart(productItem)}>Add to Cart</button>
           </div>
         </div>
       </div>
@@ -110,10 +117,10 @@ export default function ProductPage() {
       {/* Tabs */}
       <div className="mt-10 border-b border-gray-300 flex justify-between items-center">
         <div className="flex space-x-10 text-black font-semibold">
-          {["Product Details", "Rating & Reviews", "FAQs"].map((tab, idx) => (
+          { ["Product Details", "Rating & Reviews", "FAQs"].map((tab, idx) => (
             <button
               key={idx}
-              className="relative pb-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-black hover:after:bg-black"
+              className="relative pb-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-0.5 after:bg-black hover:after:bg-black"
             >
               {tab}
             </button>

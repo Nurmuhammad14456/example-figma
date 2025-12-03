@@ -2,31 +2,20 @@
 
 import { useState } from "react";
 import { Trash2, Tag, ArrowRight } from "lucide-react";
-import { product } from "../data/pruduct";
-
-type CartItem = (typeof product)[number] & { quantity: number };
+import { useCart } from "../context/CartContext";
 
 export default function CartPage() {
-  // Initial state bilan quantity qo‘shilgan
-  const [cartItems, setCartItems] = useState<CartItem[]>(
-    product.map((p) => ({ ...p, quantity: 1 }))
-  );
+  const { cartItems, removeFromCart, updateQuantity } = useCart();
   const [promo, setPromo] = useState("");
 
-  // Quantity o‘zgartirish
+  // Quantity o'zgartirish
   const changeQuantity = (id: string, delta: number) => {
-    setCartItems((prev) =>
-      prev.map((item) =>
-        item.id === id
-          ? { ...item, quantity: item.quantity + delta > 0 ? item.quantity + delta : 1 }
-          : item
-      )
-    );
+    updateQuantity(id, delta);
   };
 
-  // Item o‘chirish
+  // Item o'chirish
   const removeItem = (id: string) => {
-    setCartItems((prev) => prev.filter((item) => item.id !== id));
+    removeFromCart(id);
   };
 
   // Price hisoblash
@@ -49,7 +38,13 @@ export default function CartPage() {
       <div className="flex gap-6 flex-wrap lg:flex-nowrap">
         {/* Left: Cart Items */}
         <div className="flex-1 space-y-4 min-w-[300px]">
-          {cartItems.map((item) => (
+          {cartItems.length === 0 ? (
+            <div className="text-center py-12">
+              <p className="text-gray-500 text-lg">Savat bo'sh</p>
+              <p className="text-gray-400 text-sm mt-2">Mahsulot qo'shish uchun shop sahifasiga o'ting</p>
+            </div>
+          ) : (
+            cartItems.map((item) => (
             <div
               key={item.id}
               className="flex items-center justify-between border rounded-xl p-4 max-[450px]:p-3"
@@ -91,7 +86,8 @@ export default function CartPage() {
                 />
               </div>
             </div>
-          ))}
+            ))
+          )}
         </div>
 
         {/* Right: Order Summary */}

@@ -1,15 +1,25 @@
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
 import { product } from "../data/pruduct";
 import { ShoppingCart } from "lucide-react";
+import { useCart } from "../context/CartContext";
 
 export default function Home() {
+  const { addToCart } = useCart();
+
+  const handleAddToCart = (item: (typeof product)[number]) => {
+    addToCart(item);
+  };
+
   return (
     <div className="p-5 max-w-7xl mx-auto mt-5">
       <h1 className="text-4xl text-black font-bold text-center mt-[74px] mb-8">
         <b>NEW ARRIVALS</b>
       </h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 justify-items-center">
         {product.slice(0, 4).map((item) => {
           const discountPercentage = item.oldPrice
             ? Math.round(((item.oldPrice - item.price) / item.oldPrice) * 100)
@@ -18,16 +28,18 @@ export default function Home() {
           return (
             <div
               key={item.id}
-              className="bg-white p-4 rounded-xl shadow hover:shadow-lg hover:border hover:border-gray-300 transition group cursor-pointer"
+              className="bg-gray-50 p-4 rounded-xl shadow hover:shadow-lg hover:border hover:border-gray-300 transition group w-full"
             >
-              <div className="w-full h-64 relative overflow-hidden rounded-xl bg-gray-100">
-                <Image
-                  src={item.image}
-                  alt={item.name}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
+              <Link href={`/product?id=${item.id}`} className="block">
+                <div className="w-full h-80 relative overflow-hidden rounded-xl bg-gray-50 cursor-pointer flex items-center justify-center">
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    fill
+                    className="object-contain group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              </Link>
 
               <h2 className="mt-4 font-semibold text-black text-lg">
                 {item.name}
@@ -66,7 +78,14 @@ export default function Home() {
                     </span>
                   )}
 
-                  <ShoppingCart size={20} className="text-black" />
+                  <ShoppingCart 
+                    size={20} 
+                    className="text-black cursor-pointer hover:text-gray-600 transition-colors" 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleAddToCart(item);
+                    }}
+                  />
                 </div>
               </div>
             </div>

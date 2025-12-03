@@ -2,7 +2,7 @@ export const product = [
   {
     id: "1",
     name: "Nike Shoes",
-    image: "/img/fidbolka2.png",
+    image: "/img/Frame 32 (1).svg",
     price: 120,
     oldPrice: 150,
     rating: 4.5,
@@ -10,7 +10,7 @@ export const product = [
   {
     id: "2",
     name: "Adidas T-shirt",
-    image: "/img/shim.png",
+    image: "/img/shimKok.svg",
     price: 50,
     oldPrice: 60,
     rating: 4,
@@ -18,7 +18,7 @@ export const product = [
   {
     id: "3",
     name: "Adidas T-shirt",
-    image: "/img/koynag.png",
+    image: "/img/Frame 34 (1).svg",
     price: 50,
     oldPrice: 70,
     rating: 4.2,
@@ -26,7 +26,7 @@ export const product = [
   {
     id: "4",
     name: "Adidas T-shirt",
-    image: "/img/fidbolka.png",
+    image: "/img/Frame 38.svg",
     price: 50,
     oldPrice: 65,
     rating: 3.8,
@@ -64,6 +64,3 @@ export const product = [
     rating: 3.8,
   },
 ];
-
-
-

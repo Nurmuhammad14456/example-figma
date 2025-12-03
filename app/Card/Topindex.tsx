@@ -1,6 +1,10 @@
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
 import { product } from "../data/pruduct";
 import { ShoppingCart } from "lucide-react";
+import { useCart } from "../context/CartContext";
 
 // 🔹 Product tipi
 type Product = {
@@ -14,6 +18,11 @@ type Product = {
 
 export default function Homee() {
   const topSelling = product.slice(4, 8);
+  const { addToCart } = useCart();
+
+  const handleAddToCart = (item: Product) => {
+    addToCart(item);
+  };
 
   const ProductCard = ({ item }: { item: Product }) => {
     const discountPercentage = item.oldPrice
@@ -21,15 +30,17 @@ export default function Homee() {
       : 0;
 
     return (
-      <div className="bg-white p-4 rounded-xl shadow hover:shadow-lg hover:border hover:border-gray-300 transition group cursor-pointer">
-        <div className="w-full h-64 relative overflow-hidden rounded-xl bg-gray-100">
-          <Image
-            src={item.image}
-            alt={item.name}
-            fill
-            className="object-cover group-hover:scale-105 transition-transform duration-300"
-          />
-        </div>
+      <div className="bg-gray-50 p-4 rounded-xl shadow hover:shadow-lg hover:border hover:border-gray-300 transition group w-full">
+        <Link href={`/product?id=${item.id}`} className="block">
+          <div className="w-full h-80 relative overflow-hidden rounded-xl bg-gray-50 cursor-pointer flex items-center justify-center">
+            <Image
+              src={item.image}
+              alt={item.name}
+              fill
+              className="object-contain group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+        </Link>
 
         <h2 className="mt-4 font-semibold text-black text-lg">{item.name}</h2>
 
@@ -62,7 +73,14 @@ export default function Homee() {
               </span>
             )}
 
-            <ShoppingCart size={20} className="text-black" />
+            <ShoppingCart 
+              size={20} 
+              className="text-black cursor-pointer hover:text-gray-600 transition-colors" 
+              onClick={(e) => {
+                e.stopPropagation();
+                handleAddToCart(item);
+              }}
+            />
           </div>
         </div>
       </div>

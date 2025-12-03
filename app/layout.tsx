@@ -11,7 +11,7 @@ import Braws from "./brows";
 import Home from "./Card"; 
 import Homee from "./Card/Topindex";
 import CommentsSection from "./Comments";
-import ProductPage from "./product";
+import ShowExtras from "./ShowExtras";
 
 
 
@@ -43,10 +43,12 @@ export default function RootLayout({
 
           <ConditionalContent>
             {children}
-            <Home />
-            <Homee />
-            <Braws />
-            <CommentsSection />
+            <ShowExtras>
+              <Home />
+              <Homee />
+              <Braws />
+              <CommentsSection />
+            </ShowExtras>
           </ConditionalContent>
 
           <CartOnlyContent />
